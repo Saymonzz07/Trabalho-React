@@ -1,0 +1,79 @@
+.task-summary {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+.task-summary h2 {
+margin: 0;
+
+font-size: 22px;
+color: var(--text-primary);
+}
+
+.summary-cards {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.summary-card {
+background: var(--card);
+
+padding: 22px;
+border: 1px solid var(--border);
+border-radius: var(--radius);
+
+box-shadow: var(--shadow);
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+.summary-card span {
+display: block;
+
+margin-bottom: 8px;
+
+color: var(--text-secondary);
+font-size: 14px;
+font-weight: 500;
+}
+
+.summary-card strong {
+display: block;
+
+font-size: 30px;
+color: var(--primary);
+}
+
+.summary-message {
+margin: 0;
+
+padding: 14px 18px;
+
+border-radius: 10px;
+
+background: var(--primary-light);
+color: var(--primary);
+
+font-size: 14px;
+font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+.summary-cards {
+grid-template-columns: 1fr;
+}
+
+.summary-card {
+padding: 18px;
+}
+}

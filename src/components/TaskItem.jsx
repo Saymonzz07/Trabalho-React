@@ -1,36 +1,50 @@
 import React from 'react'
+import './TaskItem.css'
 
 const TaskItem = ({
-  titulo,
-  concluida,
-  onAlterarStatus,
-  onExcluir
+titulo,
+concluida,
+onAlterarStatus,
+onExcluir
 }) => {
-  return (
-    <div>
-      <h3>{titulo}</h3>
+return (
+<article className={`task-card ${concluida ? 'completed' : ''}`}> <h3>{titulo}</h3>
 
-      <p>
-        Status: {concluida ? 'Concluída' : 'Pendente'}
-      </p>
 
-      {!concluida && (
-        <button onClick={onAlterarStatus}>
-          Concluir
-        </button>
-      )}
+  <p className="task-status">
+    Status: {concluida ? 'Concluída' : 'Pendente'}
+  </p>
 
-      {concluida && (
-        <button onClick={onAlterarStatus}>
-          Desmarcar
-        </button>
-      )}
-
-      <button onClick={onExcluir}>
-        Excluir
+  <div className="task-actions">
+    {!concluida && (
+      <button
+        className="task-button task-button-status"
+        onClick={onAlterarStatus}
+      >
+        Concluir
       </button>
-    </div>
-  )
+    )}
+
+    {concluida && (
+      <button
+        className="task-button task-button-status"
+        onClick={onAlterarStatus}
+      >
+        Desmarcar
+      </button>
+    )}
+
+    <button
+      className="task-button task-button-delete"
+      onClick={onExcluir}
+    >
+      Excluir
+    </button>
+  </div>
+</article>
+
+
+)
 }
 
 export default TaskItem

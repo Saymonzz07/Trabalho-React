@@ -1,0 +1,25 @@
+.task-list {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+.task-list h2 {
+margin: 0;
+
+font-size: 22px;
+color: var(--text-primary);
+}
+
+.task-items {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 750px) {
+.task-items {
+grid-template-columns: 1fr;
+}
+}

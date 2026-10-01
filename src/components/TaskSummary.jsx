@@ -1,35 +1,49 @@
 import React from 'react'
+import './TaskSummary.css'
 
 const TaskSummary = ({ tarefas }) => {
-  const total = tarefas.length
+const total = tarefas.length
 
-  const concluidas = tarefas.filter(
-    (tarefa) => tarefa.concluida
-  ).length
+const concluidas = tarefas.filter(
+(tarefa) => tarefa.concluida
+).length
 
-  const pendentes = tarefas.filter(
-    (tarefa) => !tarefa.concluida
-  ).length
+const pendentes = tarefas.filter(
+(tarefa) => !tarefa.concluida
+).length
 
-  return (
-    <div>
-      <h2>Resumo</h2>
+return ( <section className="task-summary"> <h2>Resumo</h2>
 
-      <p>Total: {total}</p>
-
-      <p>Concluídas: {concluidas}</p>
-
-      <p>Pendentes: {pendentes}</p>
-
-      {pendentes > 0 ? (
-        <p>Você ainda possui tarefas pendentes.</p>
-      ) : (
-        <p>
-          Parabéns! Todas as tarefas foram concluídas!
-        </p>
-      )}
+  <div className="summary-cards">
+    <div className="summary-card">
+      <span>Total</span>
+      <strong>{total}</strong>
     </div>
-  )
+
+    <div className="summary-card">
+      <span>Concluídas</span>
+      <strong>{concluidas}</strong>
+    </div>
+
+    <div className="summary-card">
+      <span>Pendentes</span>
+      <strong>{pendentes}</strong>
+    </div>
+  </div>
+
+  {pendentes > 0 ? (
+    <p className="summary-message">
+      Você ainda possui tarefas pendentes.
+    </p>
+  ) : (
+    <p className="summary-message">
+      Parabéns! Todas as tarefas foram concluídas!
+    </p>
+  )}
+</section>
+
+
+)
 }
 
 export default TaskSummary

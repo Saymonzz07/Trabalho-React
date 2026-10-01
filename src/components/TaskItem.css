@@ -1,0 +1,137 @@
+.task-card {
+display: flex;
+flex-direction: column;
+gap: 14px;
+
+padding: 22px;
+
+background: var(--card);
+
+border: 1px solid var(--border);
+border-radius: var(--radius);
+
+box-shadow: var(--shadow);
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease,
+border-color 0.2s ease;
+}
+
+.task-card:hover {
+transform: translateY(-3px);
+
+border-color: #c7d2fe;
+
+box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+}
+
+/* Título */
+.task-card h3 {
+margin: 0;
+
+font-size: 18px;
+font-weight: 650;
+
+color: var(--text-primary);
+}
+
+/* Status */
+.task-status {
+margin: 0;
+
+font-size: 14px;
+
+color: var(--text-secondary);
+}
+
+/* Área dos botões */
+.task-actions {
+display: flex;
+gap: 10px;
+
+margin-top: 6px;
+}
+
+/* Estilo geral dos botões */
+.task-button {
+border: none;
+border-radius: 8px;
+
+padding: 9px 15px;
+
+font-size: 14px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition:
+background-color 0.2s ease,
+transform 0.15s ease,
+box-shadow 0.2s ease;
+}
+
+.task-button:hover {
+transform: translateY(-1px);
+}
+
+.task-button:active {
+transform: translateY(0);
+}
+
+.task-button:focus-visible {
+outline: 3px solid rgba(79, 70, 229, 0.25);
+outline-offset: 2px;
+}
+
+/* Botão concluir/desmarcar */
+.task-button-status {
+background: var(--primary);
+color: white;
+}
+
+.task-button-status:hover {
+background: var(--primary-hover);
+box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+/* Botão excluir */
+.task-button-delete {
+background: var(--danger-light);
+color: var(--danger);
+}
+
+.task-button-delete:hover {
+background: var(--danger);
+color: white;
+box-shadow: 0 4px 10px rgba(220, 38, 38, 0.2);
+}
+
+/* Tarefa concluída */
+.task-card.completed {
+border-color: #bbf7d0;
+background: #f0fdf4;
+}
+
+.task-card.completed h3 {
+color: var(--success);
+}
+
+.task-card.completed .task-status {
+color: var(--success);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+.task-card {
+padding: 18px;
+}
+
+.task-actions {
+flex-direction: column;
+}
+
+.task-button {
+width: 100%;
+}
+}
